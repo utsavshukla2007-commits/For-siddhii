@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>For Siddhi 💖</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+  <style>
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      font-family:'Poppins',sans-serif;
+      background:linear-gradient(180deg,#fff0f6,#ffffff);
+      color:#3d0026;
+      text-align:center;
+    }
+    header{
+      padding:40px 15px;
+      background:linear-gradient(90deg,#ffb6d5,#ffcce6);
+      font-family:'Playfair Display',serif;
+      font-size:2.3rem;
+      font-weight:600;
+      letter-spacing:1px;
+    }
+    .container{max-width:900px;margin:auto;padding:20px}
+    .hero-img{
+      width:230px;height:230px;border-radius:50%;object-fit:cover;
+      border:6px solid #ff8fc4;margin:25px auto;
+    }
+    h2{
+      font-family:'Playfair Display',serif;
+      color:#7a003c;margin-top:45px;font-size:1.7rem
+    }
+    p{font-size:1.05rem;line-height:1.8;max-width:720px;margin:10px auto}
+    .divider{width:80px;height:3px;background:#ff8fc4;margin:18px auto;border-radius:10px}
+    .gallery{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:18px;margin-top:20px}
+    .gallery img{width:100%;height:150px;object-fit:cover;border-radius:18px;border:3px solid #ffd1e8}
+    ul{list-style:none;padding:0;max-width:650px;margin:20px auto}
+    ul li{background:#ffe3f1;margin:10px 0;padding:14px;border-radius:16px;font-size:1.05rem}
+    footer{margin:50px 0 25px;font-size:.9rem;color:#6b0033}
+    .music-btn{
+      position:fixed;bottom:20px;right:20px;
+      background:#ff6fb1;color:#fff;border:none;
+      padding:13px 18px;border-radius:50px;font-size:14px;
+      box-shadow:0 6px 15px rgba(0,0,0,.15)
+    }
+  </style>
+</head>
+<body>
+
+<!-- Password Screen -->
+<div id="lockScreen" style="position:fixed;inset:0;background:linear-gradient(180deg,#fff0f6,#ffffff);display:flex;align-items:center;justify-content:center;z-index:9999;">
+  <div style="background:#ffe3f1;padding:30px 35px;border-radius:20px;box-shadow:0 10px 30px rgba(0,0,0,.15);max-width:320px;width:90%;">
+    <h2 style="margin-top:0;font-family:'Playfair Display',serif;color:#7a003c">For Siddhi 💗</h2>
+    <p style="font-size:.95rem">Enter the special word</p>
+    <input id="pwd" type="password" placeholder="Secret word" style="width:100%;padding:10px;border-radius:10px;border:1px solid #ffb6d5;margin-bottom:12px">
+    <button onclick="unlock()" style="width:100%;padding:10px;border:none;border-radius:12px;background:#ff6fb1;color:#fff;font-size:1rem">Enter</button>
+  </div>
+</div>
+
+<div id="mainContent" style="display:none">
+
+<header>For My Siddhi 💗</header>
+
+<audio id="bgMusic" loop>
+  <source src="YOUR_MUSIC_FILE.mp3" type="audio/mpeg">
+</audio>
+<button class="music-btn" onclick="toggleMusic()">🎵 Play Music</button>
+
+<div class="container">
+  <img class="hero-img" src="MAIN_PHOTO.jpg" alt="Siddhi">
+
+  <h2>Just For You</h2>
+  <div class="divider"></div>
+  <p>Siddhi, this space exists only for you. Every word here is calm, gentle, and honest — just like the way you make everything feel when you’re around.</p>
+
+  <h2>Our Story</h2>
+  <div class="divider"></div>
+  <p>Meeting you changed the rhythm of my days. Conversations felt deeper, smiles felt warmer, and silence felt comfortable. You’re not just someone special — you’re someone rare.</p>
+
+  <h2>Moments I Treasure</h2>
+  <div class="divider"></div>
+  <div class="gallery">
+    <img src="IMG1.jpg">
+    <img src="IMG2.jpg">
+    <img src="IMG3.jpg">
+    <img src="IMG4.jpg">
+  </div>
+
+  <h2>What I Promise</h2>
+  <div class="divider"></div>
+  <ul>
+    <li>I’ll always treat your heart with care.</li>
+    <li>I’ll listen, even when words are few.</li>
+    <li>I’ll respect your space, dreams, and silence.</li>
+    <li>I’ll choose patience, honesty, and kindness.</li>
+  </ul>
+
+  <h2>For You</h2>
+  <div class="divider"></div>
+  <p>You don’t need to be perfect to be special. You already are — effortlessly, quietly, beautifully.</p>
+</div>
+
+<footer>Made with sincerity 💕</footer>
+
+<script>
+  const music = document.getElementById('bgMusic');
+  const btn = document.querySelector('.music-btn');
+  function toggleMusic(){
+    if(music.paused){music.play();btn.innerText='⏸ Pause Music'}
+    else{music.pause();btn.innerText='🎵 Play Music'}
+  }
+</script>
+
+</div>
+
+<script>
+  const music = document.getElementById('bgMusic');
+  const btn = document.querySelector('.music-btn');
+  function toggleMusic(){
+    if(music.paused){music.play();btn.innerText='⏸ Pause Music'}
+    else{music.pause();btn.innerText='🎵 Play Music'}
+  }
+
+  const SECRET = "siddhi"; // CHANGE PASSWORD HERE
+  function unlock(){
+    const val = document.getElementById('pwd').value;
+    if(val.toLowerCase() === SECRET){
+      document.getElementById('lockScreen').style.display='none';
+      document.getElementById('mainContent').style.display='block';
+    } else {
+      alert('Not quite right ✨');
+    }
+  }
+</script>
+
+</body>
+</html>
